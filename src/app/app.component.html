@@ -1,0 +1,24 @@
+<!--<table>
+  <tr>
+   <td><a [routerLink]="['/public-page']" routerLinkActive="true">[PUBLIC-PAGE]</a></td>
+    <td><a [routerLink]="['/restricted-page']" routerLinkActive="true" *ngIf="isLoggedIn()">[RESTRICTED-PAGE]</a></td>
+    <td><button class="btn btn-info" (click)="login()" *ngIf="!isLoggedIn()">Sign In With Microsoft Azure </button></td>
+    <td><button class="btn btn-danger" (click)="logout()" *ngIf="isLoggedIn()">SIGN OUT</button></td>
+  </tr>
+</table>-->
+<div class="container my-5 py-5">
+  <div class="box">
+    <a [routerLink]="['/restricted-page']" routerLinkActive="true" *ngIf="isLoggedIn()">[RESTRICTED-PAGE]</a><br>
+    <a [routerLink]="['/public-page']" routerLinkActive="true">[PUBLIC-PAGE]</a>
+    <button class="btn btn-info" (click)="login()" *ngIf="!isLoggedIn()">Sign In With Microsoft Azure </button>
+    <button class="btn btn-danger" (click)="logout()" *ngIf="isLoggedIn()">Sign Out From Microsoft Azure</button>
+  </div>
+</div>
+<div class="div1" *ngIf="isLoggedIn()" >
+  <h3>You are logged in</h3>
+</div>
+<div class="div2" *ngIf="!isLoggedIn()">
+<h3 >You are NOT logged in</h3>
+</div>
+
+<router-outlet></router-outlet>
